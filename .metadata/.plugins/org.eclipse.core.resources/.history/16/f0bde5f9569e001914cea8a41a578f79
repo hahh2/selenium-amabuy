@@ -1,0 +1,16 @@
+package vn.amabuy.pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+import net.serenitybdd.core.pages.PageObject;
+
+public class RegisterPage extends PageObject {
+	public void findElementBy() {
+		WebDriver driver = new FirefoxDriver();
+		driver.get("http://amabuy.vn");
+		
+		WebElement enterValue = driver.findElement(By.xpath("//input[@placeholder = 'Email hoặc số điện thoại']"))
+	}
+}

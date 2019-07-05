@@ -1,0 +1,13 @@
+package duckduck;
+
+import org.junit.Test;
+
+public class Scariano01 extends Common{
+
+	@Test
+	public void LeanAboutScariano01() {
+		//String act = getPageTitle();
+		//System.out.print(act);
+	}
+
+}
