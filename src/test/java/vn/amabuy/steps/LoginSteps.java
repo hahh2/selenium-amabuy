@@ -1,28 +1,16 @@
 package vn.amabuy.steps;
-import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.Before;
-import org.openqa.selenium.WebDriver;
-
-import net.thucydides.core.ThucydidesSystemProperty;
-import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Step;
-import net.thucydides.core.util.EnvironmentVariables;
-import net.thucydides.core.util.SystemEnvironmentVariables;
 import vn.amabuy.pages.LoginPage;
 
 public class LoginSteps{
-	LoginPage onLoginPage;
-	String baseUrl;
-	EnvironmentVariables varEnvironmet = SystemEnvironmentVariables.createEnvironmentVariables();
 	
-	@Managed 
-	WebDriver driver;
+	LoginPage onLoginPage;
 		
-	@Before(value = "Start Project")
-	public void tear_Up() {
-		baseUrl = varEnvironmet.getProperty(ThucydidesSystemProperty.WEBDRIVER_BASE_URL);
-		driver.get(baseUrl);
+	@Step
+	public void visit_homepage() {
+		onLoginPage.open();
 	}
+	
 	@Step
 	public void enter_email_or_phonenumber(String emailOrPhoneNumber) {
 		
@@ -46,7 +34,6 @@ public class LoginSteps{
 
 	
 	@Step
-	
 	public void user_login_system(String emailOrPhoneNumber, String password) {
 		enter_email_or_phonenumber(emailOrPhoneNumber);
 		enter_password(password);
@@ -58,8 +45,4 @@ public class LoginSteps{
 		System.out.print(messeger);
 	}
 	
-	@After(value = "Quit")
-	public void teatDown() {
-		driver.quit();
-	}
 }
