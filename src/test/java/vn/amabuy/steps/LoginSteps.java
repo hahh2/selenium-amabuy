@@ -53,6 +53,11 @@ public class LoginSteps{
 		click_btn_login();
 	}
 	
+	@Step
+	public void should_see_that_error_message_is(String messeger) {
+		System.out.print(messeger);
+	}
+	
 	@After(value = "Quit")
 	public void teatDown() {
 		driver.quit();

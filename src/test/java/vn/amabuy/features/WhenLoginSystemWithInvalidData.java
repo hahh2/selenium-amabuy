@@ -3,10 +3,9 @@ import vn.amabuy.steps.LoginSteps;
 public class WhenLoginSystemWithInvalidData {
 	LoginSteps onLoginSteps;
 	
-	public void sigin_system() {
+	public void should_see_error_message_with_invalid_data() {
 		onLoginSteps.tear_Up();
-		onLoginSteps.enter_email_or_phonenumber("hahh2@gmail.com");
-		onLoginSteps.enter_password("123456");
+		onLoginSteps.user_login_system("seleniumvietnam@asksqa.com", "1234567");
 		onLoginSteps.click_btn_login();
 	}
 }
