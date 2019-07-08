@@ -3,7 +3,7 @@ import net.thucydides.core.annotations.Step;
 import vn.amabuy.pages.*;
 
 public class LoginSteps{
-	LoginPage onLoginPage = new LoginPage();
+	LoginPage onLoginPage;
 	@Step
 	public void enter_email_or_phonenumber(String emailOrPhoneNumber) {
 		
@@ -28,7 +28,7 @@ public class LoginSteps{
 	
 	@Step
 	
-	public void enter_on_brower(String emailOrPhoneNumber, String password) {
+	public void user_login_system(String emailOrPhoneNumber, String password) {
 		enter_email_or_phonenumber(emailOrPhoneNumber);
 		enter_password(password);
 		click_btn_login();
