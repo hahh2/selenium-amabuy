@@ -1,5 +1,0 @@
-package vn.amabuy.pages;
-
-public @interface FindBy {
-
-}
